@@ -59,23 +59,23 @@ function getQuestion() {
 }
 
 function questionClick() {
-  // check if user guessed wrong
+  // if wrong answer
   if (this.value !== questions[currentQuestionIndex].answer) {
-    // penalize time
+    // subtract 15 seconds from time
     time -= 15;
 
     if (time < 0) {
       time = 0;
     }
 
-    // display new time on page
+    // display new time
     timerEl.textContent = time;
 
 
-    feedbackEl.textContent = "Wrong!";
+    feedbackEl.textContent = "Incorrect";
   } else {
 
-    feedbackEl.textContent = "Correct!";
+    feedbackEl.textContent = "Correct";
   }
 
   // flash right/wrong feedback on page for half a second
@@ -99,11 +99,11 @@ function quizEnd() {
   // stop timer
   clearInterval(timerId);
 
-  // show end screen
+  // end screen
   var endScreenEl = document.getElementById("end-screen");
   endScreenEl.removeAttribute("class");
 
-  // show final score
+  // final score
   var finalScoreEl = document.getElementById("final-score");
   finalScoreEl.textContent = time;
 
@@ -128,27 +128,27 @@ function saveHighscore() {
 
   // make sure value wasn't empty
   if (initials !== "") {
-    // get saved scores from localstorage, or if not any, set to empty array
+    // get saved scores from local storage - if none, set empty array
     var highscores =
       JSON.parse(window.localStorage.getItem("highscores")) || [];
 
-    // format new score object for current user
+    // format new score
     var newScore = {
       score: time,
       initials: initials
     };
 
-    // save to localstorage
+    // saving to local storage
     highscores.push(newScore);
     window.localStorage.setItem("highscores", JSON.stringify(highscores));
 
-    // redirect to next page
+    // back to main page
     window.location.href = "highscores.html";
   }
 }
 
 function checkForEnter(event) {
-  // "13" represents the enter key
+
   if (event.key === "Enter") {
     saveHighscore();
   }
