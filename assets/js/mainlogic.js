@@ -145,4 +145,19 @@ function saveHighscore() {
     // redirect to next page
     window.location.href = "highscores.html";
   }
+}
 
+function checkForEnter(event) {
+  // "13" represents the enter key
+  if (event.key === "Enter") {
+    saveHighscore();
+  }
+}
+
+// user clicks button to submit initials
+submitBtn.onclick = saveHighscore;
+
+// user clicks button to start quiz
+startBtn.onclick = startQuiz;
+
+initialsEl.onkeyup = checkForEnter;

@@ -6,7 +6,7 @@ var questions = [
     answer: "alerts"
   },
   {
-    title: "The <p> element is use to create ______.",
+    title: "The <p> element is used to create ______.",
     choices: ["New Page", "Paragraphs", "Bold Text", "Headers"],
     answer: "Paragraphs"
   },
@@ -21,19 +21,14 @@ var questions = [
     answer: "all of the above"
   },
   {
-    title:
-      "When using BootStrap, What do your elements need to be in?",
-    choices: ["Container", "Paragraph", "Quotes", "Parentheses"],
-    answer: "Container"
-  },
-  {
     title: "What does DOM stand for?",
     choices: ["Do Overnight Modules", "Document Object Model", "Div On Modes", "Dont Over Mark"],
     answer: "Document Object Model"
   },
   {
-      title: "Inside which HTML element do we put the javascript?"
-      choices: ["<h1>", "<script>", "<js>", "<head>"],
-      answer: "<script>"
+    title:
+      "A very useful tool used during development and debugging for printing content to the debugger is:",
+    choices: ["JavaScript", "terminal / bash", "for loops", "console.log"],
+    answer: "console.log"
   }
 ];
