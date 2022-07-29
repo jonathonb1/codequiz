@@ -142,7 +142,7 @@ function saveHighscore() {
     highscores.push(newScore);
     window.localStorage.setItem("highscores", JSON.stringify(highscores));
 
-    // back to main page
+    // back to main
     window.location.href = "highscores.html";
   }
 }
@@ -156,8 +156,6 @@ function checkForEnter(event) {
 
 // user clicks button to submit initials
 submitBtn.onclick = saveHighscore;
-
 // user clicks button to start quiz
 startBtn.onclick = startQuiz;
-
 initialsEl.onkeyup = checkForEnter;
