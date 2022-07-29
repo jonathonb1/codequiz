@@ -17,7 +17,7 @@ function printHighscores() {
       olEl.appendChild(liTag);
     });
   }
-  
+    // clearing highscores
   function clearHighscores() {
     window.localStorage.removeItem("highscores");
     window.location.reload();
@@ -25,5 +25,4 @@ function printHighscores() {
   
   document.getElementById("clear").onclick = clearHighscores;
   
-//  print score upon pageload.
   printHighscores();
